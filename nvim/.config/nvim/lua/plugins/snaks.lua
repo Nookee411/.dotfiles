@@ -9,7 +9,7 @@ return {
           "**/.DS_Store",
           "**/node_modules/**",
           "**/.nuxt/**",
-          "**/output/**",
+          "**/.output/**",
           "**/dist/**",
         },
       },
@@ -18,7 +18,7 @@ return {
         exclude = {
           "**/.DS_Store",
           "**/node_modules/**",
-          "**/output/**",
+          "**/.output/**",
           "**/dist/**",
         },
       },

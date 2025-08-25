@@ -15,5 +15,7 @@ alias vim "nvim"
 alias vi "nvim"
 alias codi "code-insiders"
 alias lg "lazygit"
+alias dcl "docker compose logs -f"
+alias dc "docker compose"
 
 nvm use lts >/dev/null 2>&1
