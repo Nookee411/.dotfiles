@@ -37,15 +37,15 @@ require("claude-code").setup({
   --   popd_cmd = 'popd',       -- Command to pop directory from stack (e.g., 'popd' for bash/zsh, 'exit' for nushell)
   -- },
   -- Command settings
-  command = "claude",        -- Command used to launch Claude Code
+  command = "claude", -- Command used to launch Claude Code
   -- Command variants
   command_variants = {
     -- Conversation management
     continue = "--continue", -- Resume the most recent conversation
-    resume = "--resume",     -- Display an interactive conversation picker
+    resume = "--resume", -- Display an interactive conversation picker
 
     -- Output options
-    verbose = "--verbose",   -- Enable verbose logging with full turn-by-turn output
+    verbose = "--verbose", -- Enable verbose logging with full turn-by-turn output
   },
   -- Keymaps
   -- keymaps = {
@@ -119,3 +119,4 @@ require("lspconfig").volar.setup({
   },
 })
 
+vim.cmd("colorscheme onedark")
