@@ -26,6 +26,16 @@ return {
         "--glob=!dist/**",
         "--glob=!build/**",
       },
+      layout_strategy = "horizontal",
+      layout_config = {
+        prompt_position = "top",
+      },
+      sorting_strategy = "ascending",
+    },
+    keys = {
+      -- Override default keymaps
+      { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+      { "<C-S-p>", "<cmd>Telescope commands<cr>", desc = "Commands" }, -- Like VSCode's Ctrl+Shift+P
     },
     pickers = {
       live_grep = {
