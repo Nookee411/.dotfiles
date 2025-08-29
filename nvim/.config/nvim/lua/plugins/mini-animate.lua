@@ -4,10 +4,7 @@ return {
     -- Scroll animations that work with your <C-d> and <C-u> mappings
     scroll = {
       enable = true,
-      timing = function()
-        local animate = require("mini.animate")
-        return animate.gen_timing.linear({ duration = 150, unit = "total" })
-      end,
+      timing = require("mini.animate").gen_timing.linear({ duration = 50, unit = "total" }),
       -- subscroll = function()
       --   local animate = require("mini.animate")
       --   return animate.gen_subscroll.equal({

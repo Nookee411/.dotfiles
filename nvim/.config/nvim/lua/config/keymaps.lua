@@ -12,9 +12,15 @@ vim.api.nvim_set_keymap("n", "<leader>cq", ":ClaudeCode <CR>", { noremap = true,
 
 -- Telescope recent files with Ctrl+L
 vim.api.nvim_set_keymap("n", "<C-l>", ":Telescope oldfiles<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+  "n",
+  "<C-d>",
+  [[<Cmd>lua vim.cmd('normal! <C-d>'); MiniAnimate.execute_after('scroll', 'normal! zvzz')<CR>]],
+  { noremap = true, silent = true }
+)
 vim.keymap.set(
   "n",
-  "n",
-  '<Cmd>lua vim.cmd("normal! n"); <CR>' .. 'MiniAnimate.execute_after("scroll", "normal! zvzz")<CR>',
-  { desc = "Next search result (with centering)" }
+  "<C-u>",
+  [[<Cmd>lua vim.cmd('normal! <C-u>'); MiniAnimate.execute_after('scroll', 'normal! zvzz')<CR>]],
+  { noremap = true, silent = true }
 )
