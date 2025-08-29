@@ -34,7 +34,6 @@ return {
     },
     keys = {
       -- Override default keymaps
-      { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
       { "<C-S-p>", "<cmd>Telescope commands<cr>", desc = "Commands" }, -- Like VSCode's Ctrl+Shift+P
     },
     pickers = {

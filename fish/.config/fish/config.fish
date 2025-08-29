@@ -10,17 +10,15 @@ if test -d (brew --prefix)"/share/fish/vendor_completions.d"
     set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
 end
 
-alias v "nvim"
-alias vim "nvim"
-alias vi "nvim"
-alias codi "code-insiders"
-alias lg "lazygit"
+alias v nvim
+alias vim nvim
+alias vi nvim
+alias codi code-insiders
+alias lg lazygit
 alias dcl "docker compose logs -f"
 alias dc "docker compose"
 
 nvm use lts >/dev/null 2>&1
-
-
 
 # function fish_prompt -d "Write out the prompt"
 #     # This shows up as USER@HOST /home/user/ >, with the directory colored
