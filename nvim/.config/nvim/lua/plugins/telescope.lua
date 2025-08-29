@@ -52,6 +52,18 @@ return {
           "--glob=!node_modules/**",
         },
       },
+      oldfiles = {
+        mappings = {
+          i = {
+            ["<C-l>"] = require("telescope.actions").move_selection_next,
+            ["<C-p>"] = require("telescope.actions").move_selection_previous,
+          },
+          n = {
+            ["<C-l>"] = require("telescope.actions").move_selection_next,
+            ["<C-p>"] = require("telescope.actions").move_selection_previous,
+          },
+        },
+      },
     },
   },
 }

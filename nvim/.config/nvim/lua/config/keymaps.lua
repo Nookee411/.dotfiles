@@ -3,12 +3,18 @@
 -- Add any additional keymaps here
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = false })
 
--- In your keymaps.lua
-vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true })
+-- In your keymaps.lua - let mini-animate handle the zz centering
+-- vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>", { noremap = true })
 
 -- Claude Code keymap
-vim.api.nvim_set_keymap("n", "<leader>cq", ":ClaudeCode<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>cq", ":ClaudeCode <CR>", { noremap = true, silent = true })
 
--- Telescope recent files with Ctrl+P
-vim.api.nvim_set_keymap("n", "<C-p>", ":Telescope oldfiles<CR>", { noremap = true, silent = true })
+-- Telescope recent files with Ctrl+L
+vim.api.nvim_set_keymap("n", "<C-l>", ":Telescope oldfiles<CR>", { noremap = true, silent = true })
+vim.keymap.set(
+  "n",
+  "n",
+  '<Cmd>lua vim.cmd("normal! n"); <CR>' .. 'MiniAnimate.execute_after("scroll", "normal! zvzz")<CR>',
+  { desc = "Next search result (with centering)" }
+)
