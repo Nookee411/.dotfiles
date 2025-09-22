@@ -32,10 +32,10 @@ return {
       },
       sorting_strategy = "ascending",
     },
-    keys = {
-      -- Override default keymaps
-      { "<C-S-p>", "<cmd>Telescope commands<cr>", desc = "Commands" }, -- Like VSCode's Ctrl+Shift+P
-    },
+    -- keys = {
+    --   -- Override default keymaps
+    --   { "<C-S-p>", "<cmd>Telescope commands<cr>", desc = "Commands" }, -- Like VSCode's Ctrl+Shift+P
+    -- },
     pickers = {
       live_grep = {
         additional_args = function()
@@ -55,12 +55,12 @@ return {
       oldfiles = {
         mappings = {
           i = {
-            ["<C-l>"] = require("telescope.actions").move_selection_next,
-            ["<C-p>"] = require("telescope.actions").move_selection_previous,
+            ["<C-p>"] = require("telescope.actions").move_selection_next,
+            ["<C-o>"] = require("telescope.actions").move_selection_previous,
           },
           n = {
-            ["<C-l>"] = require("telescope.actions").move_selection_next,
-            ["<C-p>"] = require("telescope.actions").move_selection_previous,
+            ["<C-p>"] = require("telescope.actions").move_selection_next,
+            ["<C-o>"] = require("telescope.actions").move_selection_previous,
           },
         },
       },
