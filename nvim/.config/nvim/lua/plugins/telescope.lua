@@ -32,10 +32,6 @@ return {
       },
       sorting_strategy = "ascending",
     },
-    -- keys = {
-    --   -- Override default keymaps
-    --   { "<C-S-p>", "<cmd>Telescope commands<cr>", desc = "Commands" }, -- Like VSCode's Ctrl+Shift+P
-    -- },
     pickers = {
       live_grep = {
         additional_args = function()
@@ -55,10 +51,6 @@ return {
       oldfiles = {
         mappings = {
           i = {
-            ["<C-p>"] = require("telescope.actions").move_selection_next,
-            ["<C-o>"] = require("telescope.actions").move_selection_previous,
-          },
-          n = {
             ["<C-p>"] = require("telescope.actions").move_selection_next,
             ["<C-o>"] = require("telescope.actions").move_selection_previous,
           },
