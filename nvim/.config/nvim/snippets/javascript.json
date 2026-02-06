@@ -3,5 +3,210 @@
     "prefix": "effn",
     "description": "Effect.fn function with generator function",
     "body": ["Effect.fn('$1')(function* ($2) {", "  $3", "})"]
+  },
+  "effectGen": {
+    "prefix": "egen",
+    "description": "Effect.gen generator function",
+    "body": ["Effect.gen(function* () {", "  $1", "})"]
+  },
+  "effectTryPromise": {
+    "prefix": "etryprom",
+    "description": "Effect.tryPromise with error handling",
+    "body": [
+      "Effect.tryPromise({",
+      "  try: () => $1,",
+      "  catch: (error) => new $2Error({ error })",
+      "})"
+    ]
+  },
+  "effectTry": {
+    "prefix": "etry",
+    "description": "Effect.try with error handling",
+    "body": [
+      "Effect.try({",
+      "  try: () => $1,",
+      "  catch: (error) => new $2Error({ error })",
+      "})"
+    ]
+  },
+  "effectAll": {
+    "prefix": "eall",
+    "description": "Effect.all to run effects concurrently",
+    "body": ["Effect.all([$1], { concurrency: ${2:'unbounded'} })"]
+  },
+  "effectAllStruct": {
+    "prefix": "eallobject",
+    "description": "Effect.all with object/struct",
+    "body": ["Effect.all({", "  $1", "})"]
+  },
+  "effectCatchAll": {
+    "prefix": "ecatch",
+    "description": "Effect.catchAll for error recovery",
+    "body": ["Effect.catchAll($1, (error) => {", "  $2", "})"]
+  },
+  "effectCatchTag": {
+    "prefix": "ecatchtag",
+    "description": "Effect.catchTag for specific error type",
+    "body": ["Effect.catchTag($1, '$2', (error) => {", "  $3", "})"]
+  },
+  "effectMap": {
+    "prefix": "emap",
+    "description": "Effect.map transformation",
+    "body": ["Effect.map($1, ($2) => $3)"]
+  },
+  "effectFlatMap": {
+    "prefix": "eflatmap",
+    "description": "Effect.flatMap for chaining effects",
+    "body": ["Effect.flatMap($1, ($2) => $3)"]
+  },
+  "effectTap": {
+    "prefix": "etap",
+    "description": "Effect.tap for side effects",
+    "body": ["Effect.tap($1, ($2) => $3)"]
+  },
+  "effectProvide": {
+    "prefix": "eprovide",
+    "description": "Effect.provide to supply context",
+    "body": ["Effect.provide($1, $2)"]
+  },
+  "effectRunPromise": {
+    "prefix": "erun",
+    "description": "Effect.runPromise to execute effect",
+    "body": ["Effect.runPromise($1)"]
+  },
+  "effectRunSync": {
+    "prefix": "erunsync",
+    "description": "Effect.runSync to execute effect synchronously",
+    "body": ["Effect.runSync($1)"]
+  },
+  "effectFork": {
+    "prefix": "efork",
+    "description": "Effect.fork to run effect in background",
+    "body": ["Effect.fork($1)"]
+  },
+  "effectPipe": {
+    "prefix": "epipe",
+    "description": "Pipe chain for Effect transformations",
+    "body": ["$1.pipe(", "  $2", ")"]
+  },
+  "effectRetry": {
+    "prefix": "eretry",
+    "description": "Effect.retry with schedule",
+    "body": ["Effect.retry($1, { times: ${2:3} })"]
+  },
+  "effectTimeout": {
+    "prefix": "etimeout",
+    "description": "Effect.timeout with duration",
+    "body": ["Effect.timeout($1, '${2:10 seconds}')"]
+  },
+  "effectMatch": {
+    "prefix": "ematch",
+    "description": "Effect.match for result handling",
+    "body": [
+      "Effect.match($1, {",
+      "  onFailure: (error) => $2,",
+      "  onSuccess: (value) => $3",
+      "})"
+    ]
+  },
+  "effectEither": {
+    "prefix": "eeither",
+    "description": "Effect.either to convert to Either",
+    "body": ["Effect.either($1)"]
+  },
+  "effectOption": {
+    "prefix": "eoption",
+    "description": "Effect.option to convert to Option",
+    "body": ["Effect.option($1)"]
+  },
+  "effectScoped": {
+    "prefix": "escoped",
+    "description": "Effect.scoped for resource management",
+    "body": ["Effect.scoped($1)"]
+  },
+  "effectAcquireRelease": {
+    "prefix": "eacquire",
+    "description": "Effect.acquireRelease for resource management",
+    "body": [
+      "Effect.acquireRelease(",
+      "  $1, // acquire",
+      "  ($2) => $3 // release",
+      ")"
+    ]
+  },
+  "effectService": {
+    "prefix": "eservice",
+    "description": "Effect.service to access context",
+    "body": ["Effect.service($1)"]
+  },
+  "effectServiceWith": {
+    "prefix": "eservicewith",
+    "description": "Effect.serviceWith to access and transform context",
+    "body": ["Effect.serviceWith($1, ($2) => $3)"]
+  },
+  "effectLog": {
+    "prefix": "elog",
+    "description": "Effect.log for logging",
+    "body": ["Effect.log('$1')"]
+  },
+  "effectLogDebug": {
+    "prefix": "elogdebug",
+    "description": "Effect.logDebug for debug logging",
+    "body": ["Effect.logDebug('$1')"]
+  },
+  "effectAnnotateCurrentSpan": {
+    "prefix": "espan",
+    "description": "Effect.annotateCurrentSpan for tracing",
+    "body": ["Effect.annotateCurrentSpan('$1', $2)"]
+  },
+  "effectWithSpan": {
+    "prefix": "ewithspan",
+    "description": "Effect.withSpan for distributed tracing",
+    "body": ["Effect.withSpan($1, '$2')"]
+  },
+  "effectZip": {
+    "prefix": "ezip",
+    "description": "Effect.zip to combine two effects",
+    "body": ["Effect.zip($1, $2)"]
+  },
+  "effectRace": {
+    "prefix": "erace",
+    "description": "Effect.race to run effects competitively",
+    "body": ["Effect.race($1, $2)"]
+  },
+  "effectRepeat": {
+    "prefix": "erepeat",
+    "description": "Effect.repeat with schedule",
+    "body": ["Effect.repeat($1, { times: ${2:5} })"]
+  },
+  "effectDelay": {
+    "prefix": "edelay",
+    "description": "Effect.delay to add delay",
+    "body": ["Effect.delay($1, '${2:1 second}')"]
+  },
+  "effectInterrupt": {
+    "prefix": "einterrupt",
+    "description": "Effect.interrupt to interrupt execution",
+    "body": ["Effect.interrupt"]
+  },
+  "effectUninterruptible": {
+    "prefix": "euninterruptible",
+    "description": "Effect.uninterruptible to prevent interruption",
+    "body": ["Effect.uninterruptible($1)"]
+  },
+  "effectFilter": {
+    "prefix": "efilter",
+    "description": "Effect.filter to filter values",
+    "body": ["Effect.filter($1, ($2) => $3)"]
+  },
+  "effectValidate": {
+    "prefix": "evalidate",
+    "description": "Effect.validate for validation",
+    "body": [
+      "Effect.validate($1, {",
+      "  onFailure: (error) => $2,",
+      "  onSuccess: (value) => $3",
+      "})"
+    ]
   }
 }
