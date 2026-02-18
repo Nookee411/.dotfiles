@@ -32,6 +32,13 @@ return {
         vtsls = {
           settings = {
             typescript = {
+              inlayHints = {
+                parameterNames = { enabled = "literals" },
+                parameterTypes = { enabled = false },
+                variableTypes = { enabled = false },
+                propertyDeclarationTypes = { enabled = false },
+                functionLikeReturnTypes = { enabled = false },
+              },
               preferences = {
                 importModuleSpecifier = "relative",
                 includePackageJsonAutoImports = "auto",
@@ -40,6 +47,17 @@ return {
                 autoImports = true,
                 includeCompletionsForModuleExports = true,
                 includeAutomaticOptionalChainCompletions = true,
+              },
+              tsserver = {
+                maxTsServerMemory = 4096,
+              },
+            },
+            vtsls = {
+              autoUseWorkspaceTsdk = true,
+              experimental = {
+                completion = {
+                  enableServerSideFuzzyMatch = true,
+                },
               },
             },
           },
