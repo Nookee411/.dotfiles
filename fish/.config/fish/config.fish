@@ -17,6 +17,8 @@ alias codi code-insiders
 alias lg lazygit
 alias dcl "docker compose logs -f"
 alias dc "docker compose"
+alias pn pnpm
+alias oc opencode
 
 nvm use lts >/dev/null 2>&1
 

@@ -208,5 +208,29 @@
       "  onSuccess: (value) => $3",
       "})"
     ]
+  },
+  "taggedError": {
+    "prefix": "erreff",
+    "description": "Create a tagged error class with Data.TaggedError",
+    "body": [
+      "export class ${1:ErrorName} extends Data.TaggedError('${2:ErrorTag}')<{",
+      "  message: string",
+      "  cause?: string",
+      "  code?: string",
+      "}> {",
+      "  readonly _tag = '${3:ErrorTag}'",
+      "}"
+    ]
+  },
+  "effectServiceClass": {
+    "prefix": "eserv",
+    "description": "Create an Effect.Service class without implementation",
+    "body": [
+      "export class ${1:ServiceName} extends Effect.Service<${1:ServiceName}>()('${2:ServiceTag}', {",
+      "  ${3:effect}: Effect.gen(function* () {",
+      "    $4",
+      "  }),",
+      "}) {}"
+    ]
   }
 }
