@@ -134,16 +134,6 @@
       ")"
     ]
   },
-  "effectService": {
-    "prefix": "eservice",
-    "description": "Effect.service to access context",
-    "body": ["Effect.service($1)"]
-  },
-  "effectServiceWith": {
-    "prefix": "eservicewith",
-    "description": "Effect.serviceWith to access and transform context",
-    "body": ["Effect.serviceWith($1, ($2) => $3)"]
-  },
   "effectLog": {
     "prefix": "elog",
     "description": "Effect.log for logging",
@@ -226,11 +216,17 @@
     "prefix": "eserv",
     "description": "Create an Effect.Service class without implementation",
     "body": [
-      "export class ${1:ServiceName} extends Effect.Service<${1:ServiceName}>()('${2:ServiceTag}', {",
-      "  ${3:effect}: Effect.gen(function* () {",
-      "    $4",
+      "export class ${1:ServiceName} extends Effect.Service<${1:ServiceName}>()('${1:ServiceName}', {",
+      "  ${2:effect}: Effect.gen(function* () {",
+      "    $3",
+      "    return {}",
       "  }),",
       "}) {}"
     ]
+  },
+  "consoleLog": {
+    "prefix": "clog",
+    "description": "console.log",
+    "body": ["console.log($1)"]
   }
 }
